@@ -1,0 +1,13 @@
+<app-nav-bar></app-nav-bar>
+<div class="container p-3 w-50">
+  <h5>List of Employees</h5>
+  <hr>
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let emp of employees;">{{emp.first_name}} <button type="button"
+        class="btn btn-danger edit ml-2" (click)="delete(emp.employee_id)">Delete</button> <button type="button"
+        class="btn btn-light edit" (click)="edit(emp.employee_id)">Edit</button>
+    </li>
+  </ul>
+  <mat-paginator (page)="handlePageEvent($event)" [length]="length" [pageSize]="5" [pageSizeOptions]="[5, 10]" aria-label="Select page">
+  </mat-paginator>
+</div>

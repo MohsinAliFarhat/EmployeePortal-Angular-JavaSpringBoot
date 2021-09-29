@@ -1,0 +1,54 @@
+<app-nav-bar></app-nav-bar>
+<div class="container p-3 w-50">
+    <h5>Edit Employee Information</h5>
+    <hr>
+    <form #employeeForm="ngForm">
+      <div class="form-group">
+        <label for="exampleInputEmail1">First Name</label>
+        <input type="text" class="form-control" minlength="2" id="firstName" name="first_name"
+          aria-describedby="emailHelp" required [(ngModel)]="EMPLOYEE.firstName" placeholder="Enter First Name"
+          #firstName="ngModel">
+        <div [hidden]="firstName.valid || !firstName.touched" class="error">First Name is not valid</div>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Last Name</label>
+        <input type="text" class="form-control" name="last_name" minlength="2" required id="lastName"
+          aria-describedby="emailHelp" [(ngModel)]="EMPLOYEE.lastName" placeholder="Enter Last Name" #lastName="ngModel">
+        <div [hidden]="lastName.valid || !lastName.touched" class="error">Last Name is not valid</div>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp"
+          [(ngModel)]="EMPLOYEE.email" placeholder="Enter email">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Phone Number</label>
+        <input type="text" class="form-control" name="phone_number" id="phoneNumber" aria-describedby="emailHelp"
+          [(ngModel)]="EMPLOYEE.phoneNumber" placeholder="Enter Phone Number" (keypress)="phoneNumberValidation($event)">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Hire Date</label>
+        <input type="Date" class="form-control" id="hireDate" name="hire_date" [(ngModel)]="EMPLOYEE.hireDate"
+          aria-describedby="emailHelp" placeholder="Enter Hire Date">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Salary</label>
+        <input type="number" class="form-control" id="salary" name="salary" aria-describedby="emailHelp"
+          [(ngModel)]="EMPLOYEE.salary" placeholder="Enter Salary" min="1" #salary="ngModel">
+        <div [hidden]="EMPLOYEE.salary>0" class="error">Salary should be more than 0</div>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Manager</label>
+        <input type="number" class="form-control" name="manager_id" id="manager" [(ngModel)]="EMPLOYEE.managerId"
+          aria-describedby="emailHelp" placeholder="Enter manager id">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Department</label>
+        <input type="number" class="form-control" id="departement" [(ngModel)]="EMPLOYEE.department_id"
+          aria-describedby="emailHelp" name="department_id" placeholder="Enter department id">
+      </div>
+      <button class="btn btn-primary" [disabled]="!employeeForm.form.valid || !(EMPLOYEE.salary>0)"
+        (click)="updateEmployee(employeeForm.form)">Update Employee</button>
+    </form>
+  </div>
