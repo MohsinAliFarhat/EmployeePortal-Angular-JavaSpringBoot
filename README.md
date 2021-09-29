@@ -2,6 +2,7 @@
 # 1. How to run the front-end
 Steps:
 * Assuming you have cloned the repository
+* Install angular cli using: npm install -g @angular/cli
 * Move to "front-end" directory
 * Run the command "npm i"
 * Once the relecant packages have been downloaded successfully, run the following command:
