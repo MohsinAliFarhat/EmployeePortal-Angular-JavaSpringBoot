@@ -26,3 +26,19 @@ Steps:
 	5- first_name and last_name should be not be null and more than 2 chars each 
 	6- validate that salary is greater than 0
 	7- validate phone_number contain only digits and dashs 
+
+# Screenshots
+
+* Add Employee
+![image](https://user-images.githubusercontent.com/66195795/135214964-c75ecc51-3703-4ede-82ed-c535c68460e7.png)
+
+* List of employees
+![image](https://user-images.githubusercontent.com/66195795/135215076-f6fcfa8d-1755-40e0-9fc3-c32596582e32.png)
+
+* Update Employee Information
+![image](https://user-images.githubusercontent.com/66195795/135215178-b82dc722-e049-4e53-bd9e-36e1f2708bf3.png)
+
+* You can delete employee record by clicking on delete button on the list
+
+* Paging has also been implemented
+
